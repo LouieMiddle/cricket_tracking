@@ -53,7 +53,7 @@ def pitch_densitymap(xy, title='', subtitle_1='', subtitle_2=''):
     outline_colour = 'lightsteelblue'
     title_colour = '#080a2e'
     subtitle_colour = '#9e9fa3'
-    fname = 'fonts/AlumniSans-SemiBold.ttf'
+    fname = '../fonts/AlumniSans-SemiBold.ttf'
     fp = fm.FontProperties(fname=fname)
 
     X, Y, Z = get_density(xy)
@@ -118,3 +118,5 @@ def pitch_densitymap(xy, title='', subtitle_1='', subtitle_2=''):
                    outline_colour=outline_colour,
                    stump_colour=stump_colour,
                    wicket_colour=wicket_colour)
+
+    fig.show()

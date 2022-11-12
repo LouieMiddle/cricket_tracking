@@ -8,7 +8,7 @@ import pandas as pd
 from plots.pitch_densitymap import pitch_densitymap
 
 # Import Moeen Ali data
-df = pd.read_csv('data/moeen.csv')
+df = pd.read_csv('../data/moeen.csv')
 
 # Hawkeye Data has Y co-ord as meters from stumps towards bowler, so need to flip pitchX and stumpsX for plotting
 df['pitchX'] = -df['pitchX']

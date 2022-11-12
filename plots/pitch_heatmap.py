@@ -59,7 +59,7 @@ def pitch_heatmap(xy,
     outline_colour = '#595959'
     title_colour = '#080a2e'
     subtitle_colour = '#9e9fa3'
-    fname = 'fonts/AlumniSans-SemiBold.ttf'
+    fname = '../fonts/AlumniSans-SemiBold.ttf'
     fp = fm.FontProperties(fname=fname)
 
     # Bin edges
@@ -161,3 +161,5 @@ def pitch_heatmap(xy,
                    fp=fp,
                    title_colour=title_colour,
                    subtitle_colour=subtitle_colour)
+
+    fig.show()
