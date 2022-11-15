@@ -1,6 +1,3 @@
-"""A quick example that calls the 3D wicket function to plot Steve Smiths's strike rate per pitch zone using the
-Hawkeye data from the Ashes Series in England in 2019 """
-
 import numpy as np
 import pandas as pd
 from plots.pitch_heatmap import pitch_heatmap

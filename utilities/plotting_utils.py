@@ -76,9 +76,3 @@ def add_title_axis(fig, title, subtitle_1, subtitle_2, fp, title_colour='black',
                   fontproperties=fp,
                   size=14,
                   c=subtitle_colour)
-
-
-
-
-
-
