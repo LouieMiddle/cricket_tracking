@@ -14,9 +14,10 @@ balls = df[df['pitchY'] > 0]
 
 # Split balls for RHB and LHB and select pitch co-ords
 xy_rh = np.array(balls[balls.rightHandedBat == True][['pitchX', 'pitchY']])
+xy = np.array(balls[['pitchX', 'pitchY']])
 
 title = 'Left arm balls'
 subtitle_1 = 'Deliveries from left handed bowlers'
 subtitle_2 = 'IPL'
 
-pitch_densitymap(xy_rh, title=title, subtitle_1=subtitle_1, subtitle_2=subtitle_2, show_markers=False)
+pitch_densitymap(xy, title=title, subtitle_1=subtitle_1, subtitle_2=subtitle_2, show_markers=True)

@@ -14,7 +14,7 @@ runs = df.batterRuns
 
 title = 'Jos Buttler'
 subtitle_1 = 'Batting Strike Rate Zones IPL against seam'
-subtitle_2 = 'From {0} balls faced with tracking enabled | Minimum 12 balls per zone'.format(len(xy))
+subtitle_2 = 'From {0} balls faced with tracking enabled'.format(len(xy))
 legend_title = 'Strike Rate'
 
-pitch_heatmap(xy, runs, title, subtitle_1, subtitle_2, legend_title, measure='strike_rate')
+pitch_heatmap(xy, runs, title, subtitle_1, subtitle_2, legend_title, min_balls=6, show_markers=True, measure='strike_rate')
