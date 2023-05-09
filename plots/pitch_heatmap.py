@@ -20,7 +20,8 @@ def pitch_heatmap(xy,
                   legend_title='',
                   min_balls=12,
                   cmap='cool',
-                  measure=None):
+                  measure=None,
+                  show_markers=False):
 
     """ Plots a heatmap overlaid on wicket_3d front view, using a specified values array for square shading
 
@@ -59,7 +60,7 @@ def pitch_heatmap(xy,
     outline_colour = '#595959'
     title_colour = '#080a2e'
     subtitle_colour = '#9e9fa3'
-    fname = 'fonts/AlumniSans-SemiBold.ttf'
+    fname = '../fonts/AlumniSans-SemiBold.ttf'
     fp = fm.FontProperties(fname=fname)
 
     # Bin edges
@@ -154,6 +155,9 @@ def pitch_heatmap(xy,
 
     ax.text(-2.4,-1,0,legend_title, fontproperties=fp, size=17, c=outline_colour, ha='center', va='center')
 
+    if show_markers:
+        ax.scatter(xy[:, 0], xy[:, 1], c='blue', edgecolor='black', alpha=0.5, zorder=9, s=1)
+
     add_title_axis(fig,
                    title,
                    subtitle_1,
@@ -161,3 +165,5 @@ def pitch_heatmap(xy,
                    fp=fp,
                    title_colour=title_colour,
                    subtitle_colour=subtitle_colour)
+
+    fig.show()

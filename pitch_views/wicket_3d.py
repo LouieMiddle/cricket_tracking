@@ -40,7 +40,7 @@ def plot_wicket_3d(ax,
     -------
     matplotlib.axes.Axes"""
 
-    fname = 'fonts/AlumniSans-SemiBold.ttf'
+    fname = '../fonts/AlumniSans-SemiBold.ttf'
     fp = fm.FontProperties(fname=fname)
 
     if view == 'front':

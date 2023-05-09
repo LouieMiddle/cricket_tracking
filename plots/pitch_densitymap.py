@@ -22,12 +22,12 @@ def get_density(data):
     X, Y = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
     positions = np.vstack([X.ravel(), Y.ravel()])
 
-    kernel = gaussian_kde(data.T, bw_method=0.30)
+    kernel = gaussian_kde(data.T)
     Z = np.reshape(kernel(positions).T, X.shape)
     return X, Y, Z
 
 
-def pitch_densitymap(xy, title='', subtitle_1='', subtitle_2=''):
+def pitch_densitymap(xy, title='', subtitle_1='', subtitle_2='', show_markers=False):
 
     """ Plots a heatmap overlaid on wicket_3d front view, using a specified values array for square shading
 
@@ -53,7 +53,7 @@ def pitch_densitymap(xy, title='', subtitle_1='', subtitle_2=''):
     outline_colour = 'lightsteelblue'
     title_colour = '#080a2e'
     subtitle_colour = '#9e9fa3'
-    fname = 'fonts/AlumniSans-SemiBold.ttf'
+    fname = '../fonts/AlumniSans-SemiBold.ttf'
     fp = fm.FontProperties(fname=fname)
 
     X, Y, Z = get_density(xy)
@@ -78,7 +78,6 @@ def pitch_densitymap(xy, title='', subtitle_1='', subtitle_2=''):
     colours = plt.cm.PuRd(Z)
 
     # A trick to apply gradual alpha shading to the surface plot for cleaner looking visual
-
     for i in range(len(colours)):
         plane = colours[i]
         for j in range(len(plane)):
@@ -98,8 +97,8 @@ def pitch_densitymap(xy, title='', subtitle_1='', subtitle_2=''):
                     antialiased=False)
 
     # Plot the pitch points as a scatter overlaid
-    # ax.scatter(xy[:, 0], xy[:, 1], c='blue', edgecolor='black', alpha=0.5, zorder=9)
-
+    if show_markers:
+        ax.scatter(xy[:, 0], xy[:, 1], c='blue', edgecolor='black', alpha=0.5, zorder=9, s=1)
 
     # Add titles and subtitles
     add_title_axis(fig,
@@ -118,3 +117,5 @@ def pitch_densitymap(xy, title='', subtitle_1='', subtitle_2=''):
                    outline_colour=outline_colour,
                    stump_colour=stump_colour,
                    wicket_colour=wicket_colour)
+
+    fig.show()

@@ -1,5 +1,1 @@
-.idea
-cricket_tracking.iml
-data/mensIPLHawkeyeStats.csv
-data/mensODIHawkeyeStats.csv
-data/mensTestHawkeyeStats.csv
+.idea/*
